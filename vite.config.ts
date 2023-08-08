@@ -6,6 +6,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import VueRouter from 'unplugin-vue-router/vite'
 
+import UnoCSS from 'unocss/vite'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -14,6 +16,7 @@ export default defineConfig({
     }),
     vue(),
     vueJsx(),
+    UnoCSS()
   ],
   resolve: {
     alias: {
