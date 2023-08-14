@@ -13,14 +13,28 @@
     <el-button type="warning">Warning</el-button>
     <el-button type="danger">Danger</el-button>
   </el-row>
+  <Child @click-count="handleClick"></Child>
+  <Child @click-count="handleClick"></Child>
 </template>
 
 <script setup lang="ts">
+import Child from '@/components/Child.vue'
+
+// Vue Macros 语法糖
+defineOptions({
+  name:'HomeIndex11'
+})
+
 const msg = ref('Hello world11')
 
 const target = ref(null)
 
 const { x, y, isOutside } = useMouseInElement(target)
+
+const handleClick = (num:number) => {
+  console.log(num)
+}
+
 </script>
 
 <style scoped></style>

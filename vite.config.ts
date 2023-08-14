@@ -3,14 +3,14 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
 
+import VueMacros from 'unplugin-vue-macros/vite'
+
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-
 import Layouts from 'vite-plugin-vue-layouts'
-
 import UnoCSS from 'unocss/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
@@ -20,8 +20,12 @@ export default defineConfig({
     VueRouter({
       /* options */
     }),
-    vue(),
-    vueJsx(),
+    VueMacros({
+      plugins: {
+        vue: vue(),
+        vueJsx: vueJsx(), // 如果需要
+      },
+    }),
     UnoCSS(),
     Components({
       /* options */
@@ -31,7 +35,7 @@ export default defineConfig({
     }),
     Layouts({
       layoutsDirs: 'src/layouts',
-      defaultLayout:'default'
+      defaultLayout: 'default'
     }),
     AutoImport({
       include: [
