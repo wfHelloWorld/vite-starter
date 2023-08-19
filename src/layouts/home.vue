@@ -1,14 +1,15 @@
 <template>
-    <div>
-        home layout
-    </div>
-    <router-view></router-view>
+  <div>home layout</div>
+  <el-button>
+    <router-link to="/">index</router-link>
+  </el-button>
+  <el-button>
+    <router-link to="about">about</router-link>
+  </el-button>
+
+  <router-view></router-view>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

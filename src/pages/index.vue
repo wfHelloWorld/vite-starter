@@ -13,7 +13,8 @@
     <el-button type="warning">Warning</el-button>
     <el-button type="danger">Danger</el-button>
   </el-row>
-  <Child @click-count="handleClick"></Child>
+
+  <!-- Vue Macros emit语法糖测试 -->
   <Child @click-count="handleClick"></Child>
 </template>
 
